@@ -1,5 +1,7 @@
 ## react-month-calendar
 
+![](http://dbachko.github.io/react-month-calendar/example/calendar.png)
+
 Simple month calendar widget for React
 
 ## Usage
