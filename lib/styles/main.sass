@@ -1,0 +1,90 @@
+@import "utils"
+@import "variables"
+@import "fonts"
+
+/* calendar styles */
+#{$prefixClass}
+  display: flex
+  flex-direction: column
+  cursor: default
+
+  ::-moz-selection
+    background-color: transparent
+
+  ::selection
+    background-color: transparent
+
+  &-header
+    display: flex
+    justify-content: space-between
+
+  &-header-nav
+    display: flex
+    align-items: center
+
+    span
+      display: inline-block
+      width: 1em
+      height: 1em
+      margin-left: 5px
+      overflow: hidden
+      &:hover
+        cursor: pointer
+      &:active
+        color: $secondaryLabelColor
+
+  .week,
+  .month,
+  .weekdays
+    display: flex
+
+  .month
+    flex-flow: column nowrap
+
+  .week
+    border-bottom: 1px solid $quaternaryLabelColor
+    border-left: 1px solid $quaternaryLabelColor
+    &:first-of-type
+      border-top: 1px solid $quaternaryLabelColor
+
+  .day
+    border-right: 1px solid $quaternaryLabelColor
+
+    &:hover
+      background-color: $quaternaryLabelColor
+      cursor: pointer
+      // box-shadow: inset 0 0 7px -1px $secondaryLabelColor
+
+      .edge
+        color: $white
+
+    &.active, &:active
+      background-color: $quaternaryLabelColor
+      // box-shadow: inset 0 0 7px -1px $labelColorDarken
+
+    &.today
+      background-color: $blueDarken
+      // box-shadow: inset 0 0 7px -1px $labelColor
+      color: $white
+      &:hover
+        // box-shadow: inset 0 0 7px -1px $labelColorDarken
+
+    &.edge
+      color: #aaa
+
+    &.weekend
+      background-color: $lightGray
+      &:hover, &.active
+        background-color: $quaternaryLabelColor
+
+  .weekdays
+    color: $secondaryLabelColor
+    font-weight: bold
+
+  .flex-el
+    display: flex
+    width: 30px
+    height: 30px
+    flex: 1 1 100%
+    justify-content: center
+    align-items: center
