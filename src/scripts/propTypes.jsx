@@ -1,6 +1,7 @@
 'use strict';
 
 const React = require('react');
+const Lazy = require('lazy.js');
 const moment = require('moment');
 const warning = require('react/lib/warning');
 
@@ -77,12 +78,10 @@ module.exports.Mixin = (...types) => {
   var propTypes = {};
 
   types.forEach((type) => {
-    Object.assign(propTypes, module.exports.types[type]);
+    Lazy(propTypes).assign(module.exports.types[type]);
   });
 
-  var result = {
-    propTypes: propTypes
+  return {
+    propTypes
   };
-
-  return result;
 };

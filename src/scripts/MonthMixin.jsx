@@ -48,6 +48,10 @@ var MonthMixin = {
     return weeks;
   },
 
+  getCurrentMonth () {
+    return this.state.date.month();
+  },
+
   // Generates array of days for given month
   getDays () {
     var dateInit = this.state.date,

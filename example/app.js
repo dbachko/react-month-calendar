@@ -2,10 +2,17 @@
 
 var App = React.createClass({
 
+  handleDayClick (date) {
+    console.log(date.format());
+  },
+
   render: function() {
     return (
       <div className="app-wrapper">
-        <Month firstDayOfWeek={1} />
+        <Month
+          firstDayOfWeek={1}
+          onDayClick={this.handleDayClick}
+        />
       </div>
     );
   }

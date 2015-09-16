@@ -7,7 +7,6 @@ const MonthMixin = require('./MonthMixin');
 const propTypes = require('./propTypes');
 const Week = require('./Week');
 
-
 var Month = React.createClass({
   mixins: [
     MonthMixin,
@@ -33,6 +32,9 @@ var Month = React.createClass({
   },
 
   handleDayClick ({date}) {
+    if(this.props.onDayClick) {
+      this.props.onDayClick(date);
+    }
     this.setState({
       date,
       active: date
@@ -82,7 +84,10 @@ var Month = React.createClass({
           onCurMonthClick={this.handleNavClick.bind(null, 'cur')}
           onNextMonthClick={this.handleNavClick.bind(null, 'next')}
         />
-        <div className='month'>
+        <div
+          className='month'
+          key={`m${this.getCurrentMonth()}`}
+        >
           <header className='weekdays'>
             {this.createWeeksHeader()}
           </header>

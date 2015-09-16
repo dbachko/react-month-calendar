@@ -17,7 +17,9 @@ gulp
 
 Property | Type | Default | Required | Description
 -------- | ---- | ------- | -------- |-----------
-date | Any type momentjs can accept | yes | no | Default: current date
+date | Moment.js supported input types | yes | no | Default: current date
+firstDayOfWeek | `String` | yes | no | Day of the week ([0,6] with 0=Sunday)
+onDayClick | `Function` | no | no | Accepts Moment.js date object
 
 ## License
 

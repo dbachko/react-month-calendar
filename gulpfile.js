@@ -49,10 +49,10 @@ gulp.task('server', ['compass'], function() {
 });
 
 gulp.task('compass', function() {
-  return gulp.src('lib/styles/main.sass')
+  return gulp.src('src/styles/main.sass')
     .pipe(compass({
       css: 'dist/styles',
-      sass: 'lib/styles'
+      sass: 'src/styles'
     })).pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
@@ -60,13 +60,13 @@ gulp.task('compass', function() {
 });
 
 gulp.task('copy', function() {
-  return gulp.src(['lib/assets/**'])
+  return gulp.src(['src/assets/**'])
     .pipe(gulp.dest('dist'));
 })
 
 gulp.task('watch', function() {
-  gulp.watch('./lib/scripts/*.jsx', ['webpack']);
-  gulp.watch('./lib/styles/*.{scss,sass}', ['compass', 'webpack']);
+  gulp.watch('./src/scripts/*.jsx', ['webpack']);
+  gulp.watch('./src/styles/*.{scss,sass}', ['compass', 'webpack']);
 });
 
 gulp.task('default', ['clean:dist', 'webpack', 'copy', 'server', 'watch']);
