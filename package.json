@@ -17,7 +17,6 @@
   "license": "MIT",
   "main": "./lib/scripts/Month.js",
   "scripts": {
-    "postinstall": "bower install",
     "start": "./node_modules/gulp/bin/gulp.js",
     "prerelease": "babel src --out-dir lib && NODE_ENV=production webpack --config webpack.config.js"
   },
