@@ -7,3 +7,4 @@ build/
 demos
 src/
 webpack.config.js
+npm-debug.log

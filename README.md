@@ -18,6 +18,7 @@ gulp
 Property | Type | Default | Required | Description
 -------- | ---- | ------- | -------- |-----------
 date | Moment.js supported input types | yes | no | Default: current date
+headerDateFormat | `String` | yes | no | Moment.js date string format
 firstDayOfWeek | `String` | yes | no | Day of the week ([0,6] with 0=Sunday)
 onDayClick | `Function` | no | no | Accepts Moment.js date object
 

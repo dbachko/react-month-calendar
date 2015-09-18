@@ -12,6 +12,7 @@ var App = React.createClass({
         <Month
           firstDayOfWeek={1}
           onDayClick={this.handleDayClick}
+          headerDateFormat={'MMM YYYY'}
         />
       </div>
     );

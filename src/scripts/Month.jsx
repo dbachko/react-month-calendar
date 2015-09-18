@@ -8,6 +8,7 @@ const propTypes = require('./propTypes');
 const Week = require('./Week');
 
 var Month = React.createClass({
+
   mixins: [
     MonthMixin,
     propTypes.Mixin('Month')
@@ -15,7 +16,8 @@ var Month = React.createClass({
 
   getDefaultProps () {
     return {
-      firstDayOfWeek: 0
+      firstDayOfWeek: 0,
+      headerDateFormat: 'MMMM YYYY'
     };
   },
 
@@ -78,12 +80,12 @@ var Month = React.createClass({
       <div className='cal'>
         <CalendarHeader
           className='cal-header'
+          headerDateFormat={this.props.headerDateFormat}
           date={this.state.date}
           isCurMonth={this.isCurMonth()}
           onPrevMonthClick={this.handleNavClick.bind(null, 'prev')}
           onCurMonthClick={this.handleNavClick.bind(null, 'cur')}
-          onNextMonthClick={this.handleNavClick.bind(null, 'next')}
-        />
+          onNextMonthClick={this.handleNavClick.bind(null, 'next')} />
         <div
           className='month'
           key={`m${this.getCurrentMonth()}`}

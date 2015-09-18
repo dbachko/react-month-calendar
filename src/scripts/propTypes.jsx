@@ -55,6 +55,7 @@ module.exports.types.Day = {
 };
 
 module.exports.types.CalendarHeader = {
+  headerDateFormat: React.PropTypes.string,
   onPrevMonthClick: React.PropTypes.func,
   onCurMonthClick: React.PropTypes.func,
   onNextMonthClick: React.PropTypes.func
