@@ -41,45 +41,34 @@
   .month
     flex-flow: column nowrap
 
-  .week
-    border-bottom: 1px solid $quaternaryLabelColor
-    border-left: 1px solid $quaternaryLabelColor
-    &:first-of-type
-      border-top: 1px solid $quaternaryLabelColor
-
   .day
-    border-right: 1px solid $quaternaryLabelColor
+    border-radius: 15px
 
     &:hover
       background-color: $quaternaryLabelColor
       cursor: pointer
-      // box-shadow: inset 0 0 7px -1px $secondaryLabelColor
 
       .edge
         color: $white
 
     &.active, &:active
       background-color: $quaternaryLabelColor
-      // box-shadow: inset 0 0 7px -1px $labelColorDarken
-
-    &.today
-      background-color: $blueDarken
-      // box-shadow: inset 0 0 7px -1px $labelColor
-      color: $white
-      &:hover
-        // box-shadow: inset 0 0 7px -1px $labelColorDarken
 
     &.edge
       color: #aaa
 
-    &.weekend
-      background-color: $lightGray
-      &:hover, &.active
-        background-color: $quaternaryLabelColor
+    &.today
+      background-color: $blueDarken
+      color: $white
 
   .weekdays
+    border-bottom: 1px solid $quaternaryLabelColor
+    margin-bottom: 3px
+    text-transform: uppercase
+    font-weight: 300
+    font-size: 0.875rem
+    letter-spacing: 1px
     color: $secondaryLabelColor
-    font-weight: bold
 
   .flex-el
     display: flex
