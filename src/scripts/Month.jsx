@@ -7,6 +7,7 @@ const MonthMixin = require('./MonthMixin');
 const propTypes = require('./propTypes');
 const Week = require('./Week');
 
+
 var Month = React.createClass({
 
   mixins: [

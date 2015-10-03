@@ -10,10 +10,9 @@ var App = React.createClass({
     return (
       <div className="app-wrapper">
         <Month
-          firstDayOfWeek={1}
+          firstDayOfWeek={0}
           onDayClick={this.handleDayClick}
-          headerDateFormat={'MMM YYYY'}
-        />
+          headerDateFormat={'MMM YYYY'}/>
       </div>
     );
   }
