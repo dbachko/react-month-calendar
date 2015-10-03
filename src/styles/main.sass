@@ -18,6 +18,9 @@
     display: flex
     justify-content: space-between
 
+  &-header-title
+    padding-left: 3px
+
   &-header-nav
     display: flex
     align-items: center
@@ -42,7 +45,7 @@
     flex-flow: column nowrap
 
   .day
-    border-radius: 15px
+    border-radius: 50%
 
     &:hover
       background-color: $quaternaryLabelColor
@@ -55,11 +58,17 @@
       background-color: $quaternaryLabelColor
 
     &.edge
-      color: #aaa
+      color: $windowFrameColor
 
     &.today
       background-color: $blueDarken
       color: $white
+
+  .weekend
+    color: $secondaryLabelColor
+
+    &.edge
+      color: $secondaryLabelColor
 
   .weekdays
     border-bottom: 1px solid $quaternaryLabelColor
