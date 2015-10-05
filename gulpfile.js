@@ -10,7 +10,7 @@ var del = require('del'),
     webpackConfig = require('./webpack.config.js');
 
 gulp.task('clean:dist', function() {
-  return del('dist');
+  return del('dist/*');
 });
 
 gulp.task('webpack', function(callback) {
