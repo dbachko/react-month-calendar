@@ -1,8 +1,8 @@
 'use strict';
 
 const React = require('react');
-const Lazy = require('lazy.js');
 const moment = require('moment');
+const _ = require('lodash');
 
 const WEEKENDS = [0, 6]; // [Su, Sa]
 
@@ -40,25 +40,23 @@ var MonthMixin = {
   },
 
   // Generates array of weeks for given month
-  getWeeks () {
-    var weeks = [];
-    this.getDays().chunk(7).each((week, idx) => {
-      weeks.push(week);
-    });
-    return weeks;
+  getWeeks () {    
+    return _.chunk(this.getDays(), 7);
+  },
+
+  getCurrentMonth () {
+    return this.state.date.month();
   },
 
   // Generates array of days for given month
   getDays () {
     var dateInit = this.state.date,
         dateTmp = dateInit.clone().startOf('month').startOf('week'),
-        days = [],
-        isEdgeDays;
+        days = [];
 
-    Lazy.range(0, 42).each(n => {
-      isEdgeDays = !dateTmp.isSame(dateInit, 'month');
+    _.range(0, 42).forEach(n => {
       days.push({
-        isEdgeDays,
+        isEdgeDays: !dateTmp.isSame(dateInit, 'month'),
         date: dateTmp.clone(),
         day: dateTmp.format('D'),
         isToday: this.isToday(dateTmp),
@@ -68,7 +66,7 @@ var MonthMixin = {
       dateTmp.add(1, 'day');
     });
 
-    return Lazy(days);
+    return days;
   }
 
 };

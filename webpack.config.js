@@ -4,15 +4,15 @@ var _ = require('lodash');
 var webpack = require('webpack');
 
 var config = {
-  libFileName: 'Month',
-  libSrc: './lib/scripts/Month.jsx'
+  fileName: 'Month',
+  src: './src/scripts/Month.jsx'
 };
 
 module.exports = {
-  entry: config.libSrc,
+  entry: config.src,
   output: {
     path: __dirname + '/dist',
-    filename: config.libFileName + '.js',
+    filename: config.fileName + '.js',
     libraryTarget: 'umd',
     library: 'Month'
   },

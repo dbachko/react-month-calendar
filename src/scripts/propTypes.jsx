@@ -1,6 +1,7 @@
 'use strict';
 
 const React = require('react');
+const _ = require('lodash');
 const moment = require('moment');
 const warning = require('react/lib/warning');
 
@@ -54,6 +55,7 @@ module.exports.types.Day = {
 };
 
 module.exports.types.CalendarHeader = {
+  headerDateFormat: React.PropTypes.string,
   onPrevMonthClick: React.PropTypes.func,
   onCurMonthClick: React.PropTypes.func,
   onNextMonthClick: React.PropTypes.func
@@ -77,12 +79,10 @@ module.exports.Mixin = (...types) => {
   var propTypes = {};
 
   types.forEach((type) => {
-    Object.assign(propTypes, module.exports.types[type]);
+    _.assign(propTypes, module.exports.types[type])
   });
 
-  var result = {
-    propTypes: propTypes
+  return {
+    propTypes
   };
-
-  return result;
 };
