@@ -12,15 +12,16 @@ var CalendarHeader = React.createClass({
   ],
 
   render () {
-    var {date, headerDateFormat, isCurMonth} = this.props,
+    var {date, headerDateFormat: {m, y}, isCurMonth} = this.props,
         curMonthClasses = cx({
           'icon-a': isCurMonth,
           'icon-p': !isCurMonth
         });
     return (
       <div className='cal-header'>
-        <div className='cal-header-title'>
-          <b>{date.format(headerDateFormat)}</b>
+        <div className='cal-header__title'>
+          <b className='cal-header__title-month'>{date.format(m)}</b>
+          <span className='cal-header__title-year'>{date.format(y)}</span>
         </div>
         <div className='cal-header-nav'>
           <span

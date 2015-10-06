@@ -18,7 +18,10 @@ var Month = React.createClass({
   getDefaultProps () {
     return {
       firstDayOfWeek: 0,
-      headerDateFormat: 'MMMM YYYY'
+      headerDateFormat: {
+        m: 'MMMM',
+        y: 'YYYY'
+      }
     };
   },
 

@@ -1,7 +1,7 @@
 {
   "name": "react-month-calendar",
-  "version": "0.0.7",
-  "description": "Simple month calendar widget for React",
+  "version": "0.0.8",
+  "description": "Month calendar widget for React",
   "repository": {
     "type": "git",
     "url": "https://github.com/dbachko/react-month-calendar"

@@ -18,23 +18,27 @@
     display: flex
     justify-content: space-between
 
-  &-header-title
-    padding-left: 3px
+    &__title
+      padding-left: 3px
 
-  &-header-nav
-    display: flex
-    align-items: center
+      &-year
+        margin-left: 5px
+        font-weight: 300
 
-    span
-      display: inline-block
-      width: 1em
-      height: 1em
-      margin-left: 5px
-      overflow: hidden
-      &:hover
-        cursor: pointer
-      &:active
-        color: $secondaryLabelColor
+    &-nav
+      display: flex
+      align-items: center
+
+      span
+        display: inline-block
+        width: 1em
+        height: 1em
+        margin-left: 5px
+        overflow: hidden
+        &:hover
+          cursor: pointer
+        &:active
+          color: $secondaryLabelColor
 
   .week,
   .month,
