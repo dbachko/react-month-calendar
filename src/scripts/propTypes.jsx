@@ -3,7 +3,7 @@
 const React = require('react');
 const _ = require('lodash');
 const moment = require('moment');
-const warning = require('react/lib/warning');
+const warning = require('fbjs/lib/warning');
 
 
 var validateDateProp = (prop) => {
